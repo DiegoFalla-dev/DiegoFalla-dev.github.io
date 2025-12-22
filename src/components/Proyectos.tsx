@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
-import { FiExternalLink, FiCode } from "react-icons/fi";
+import { FiCode, FiRefreshCw } from "react-icons/fi";
 import sampleImg from "../assets/react.svg";
 
 type Project = {
@@ -164,8 +164,8 @@ export default function Projects() {
       <div className="space-y-8">
         {projects.map((p) => (
           <article key={p.id} className="grid items-center grid-cols-1 gap-4 project-card md:grid-cols-12">
-            <div className="glass p-4 rounded-lg md:col-span-7">
-              <h3 className="text-xl font-semibold text-slate-100 flex items-center gap-2">
+            <div className="p-4 rounded-lg glass md:col-span-7">
+              <h3 className="flex items-center gap-2 text-xl font-semibold text-slate-100">
                 <FiCode className="text-brand-primary" />
                 {p.title}
               </h3>
@@ -181,10 +181,8 @@ export default function Projects() {
             <div className="flex justify-end md:col-span-5">
               <a
                 href={p.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  cycleProjectImage(p.id);
-                }}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full md:w-[420px] rounded-lg overflow-hidden shadow-lg bg-gradient-to-br from-brand-primary to-brand-accent"
               >
                 <div className="relative w-full h-56 md:h-48" style={{ perspective: 900 }}>
@@ -194,9 +192,17 @@ export default function Projects() {
                     alt={p.title}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute p-2 text-white rounded-full top-3 right-3 bg-brand-deep/60">
-                    <FiExternalLink />
-                  </div>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      cycleProjectImage(p.id);
+                    }}
+                    className="absolute p-2 text-white transition-colors rounded-full top-3 right-3 bg-brand-deep/60 hover:bg-brand-deep/80"
+                    title="Cambiar imagen"
+                  >
+                    <FiRefreshCw />
+                  </button>
                 </div>
               </a>
             </div>

@@ -1,4 +1,4 @@
-import { FiUser } from 'react-icons/fi';
+//import React from 'react';
 
 export default function About() {
   return (
@@ -6,13 +6,10 @@ export default function About() {
       <h2 className="mb-4 text-2xl font-bold text-slate-100"><span style={{color: "#A52502"}}>S</span>obre mi</h2>
       <div className="p-6 rounded-lg glass">
         <div className="flex items-start gap-4">
-          <FiUser className="mt-1 text-2xl text-brand-primary" />
           <div className="leading-relaxed text-slate-200 max-w-prose">
             <p className="mb-4">Soy una persona responsable, proactiva y con gran interés en seguir aprendiendo y mejorando constantemente. Me caracterizo por adaptarme con facilidad a nuevos entornos y por asumir los retos con compromiso y dedicación.</p>
-
             <p className="mb-4">Tengo experiencia trabajando de manera organizada, tanto de forma individual como en equipo, siempre buscando aportar soluciones prácticas y eficientes. Valoro la comunicación clara y el respeto, ya que considero que son claves para lograr buenos resultados.</p>
-
-            <p className="mb-4">Me motiva crecer personal y profesionalmente, aportar mis conocimientos y adquirir nuevas habilidades que me permitan enfrentar desafíos cada vez más grandes. Siempre busco dar lo mejor de mí en cada proyecto o actividad que realizo.</p>
+            <p>Estoy entusiasmado por seguir creciendo profesionalmente y contribuir con mis habilidades y conocimientos en proyectos desafiantes.</p>
           </div>
         </div>
       </div>

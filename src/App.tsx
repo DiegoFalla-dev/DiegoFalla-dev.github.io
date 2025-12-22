@@ -6,11 +6,13 @@ import Formacion from './components/Formacion';
 import Tecnologias from './components/Tecnologias';
 import Experiencia from './components/Experiencia';
 // import Contact from './components/Contact';
+import BackgroundIcons from './components/BackgroundIcons';
 import { FiGithub, FiLinkedin, FiFileText } from 'react-icons/fi';
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-bg">
+    <div className="min-h-screen bg-brand-bg relative">
+      <BackgroundIcons />
       <Header />
       <main className="mx-auto w-[90vw] md:w-[70vw] max-w-[1200px] px-4 py-10 space-y-8">
         <section className="flex items-center h-screen p-6 glass">

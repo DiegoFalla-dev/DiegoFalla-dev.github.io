@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* CSS variables mapped to the provided palette */
 :root {
 	--brand-primary: #1C8394;
@@ -72,3 +68,22 @@ main > * {
 .hover-bg-brand-mid-20-important:hover { background-color: rgba(var(--brand-mid-rgb),0.12) !important; }
 .hover-bg-brand-accent-important:hover { background-color: var(--brand-accent) !important; color: #fff !important; }
 .hover-border-brand-mid-important:hover { border-color: var(--brand-mid) !important; }
+
+/* Animated background icons */
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.falling-icon {
+  position: absolute;
+  animation: fall linear infinite;
+  opacity: 0.1;
+  pointer-events: none;
+}
