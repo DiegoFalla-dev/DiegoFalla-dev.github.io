@@ -59,7 +59,7 @@ export default function Projects() {
       try {
         const all = await Promise.all(
           projects.map(async (p) => {
-            const variants = await findVariantsById(p.id, 8);
+            const variants = p.id === "cineplus-ecommerce" ? await findVariantsById(p.id, 2) : [];
             return [p.id, variants.length ? variants : p.image ? [p.image] : []];
           })
         );
