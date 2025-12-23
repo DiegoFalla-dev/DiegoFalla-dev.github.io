@@ -3,16 +3,7 @@ import { gsap } from "gsap";
 import { FiCode, FiRefreshCw } from "react-icons/fi";
 import sampleImg from "../assets/react.svg";
 
-type Project = {
-  id: string;
-  title: string;
-  description: string;
-  tags: string[];
-  image?: string;
-  href?: string;
-};
-
-const projects: Project[] = [
+const projects = [
   {
     id: "cineplus-ecommerce",
     title: "E-Commerce Cineplus",
@@ -43,18 +34,18 @@ const projects: Project[] = [
 ];
 
 export default function Projects() {
-  const containerRef = useRef<HTMLElement | null>(null);
-  const [imgVariants, setImgVariants] = useState<Record<string, string[]>>(() =>
+  const containerRef = useRef(null);
+  const [imgVariants, setImgVariants] = useState(() =>
     projects.reduce((acc, p) => {
       acc[p.id] = p.image ? [p.image] : [];
       return acc;
-    }, {} as Record<string, string[]>)
+    }, {})
   );
-  const [imgIndex, setImgIndex] = useState<Record<string, number>>(() =>
+  const [imgIndex, setImgIndex] = useState(() =>
     projects.reduce((acc, p) => {
       acc[p.id] = 0;
       return acc;
-    }, {} as Record<string, number>)
+    }, {})
   );
 
   useEffect(() => {
@@ -69,13 +60,13 @@ export default function Projects() {
         const all = await Promise.all(
           projects.map(async (p) => {
             const variants = await findVariantsById(p.id, 8);
-            return [p.id, variants.length ? variants : p.image ? [p.image] : []] as const;
+            return [p.id, variants.length ? variants : p.image ? [p.image] : []];
           })
         );
         const map = all.reduce((acc, [id, arr]) => {
-          acc[id] = arr as string[];
+          acc[id] = arr;
           return acc;
-        }, {} as Record<string, string[]>);
+        }, {});
         setImgVariants((s) => ({ ...s, ...map }));
       } catch (e) {
         // ignore prefetch errors
@@ -86,9 +77,9 @@ export default function Projects() {
   }, []);
 
   // find numbered variants in /img/{id}{n}.{ext}, up to a max per project
-  async function findVariantsById(id: string, maxVariants = 8) {
+  async function findVariantsById(id, maxVariants = 8) {
     const exts = ["png", "jpg", "svg", "webp"];
-    const variants: string[] = [];
+    const variants = [];
     for (let n = 1; n <= maxVariants; n++) {
       for (const ext of exts) {
         try {
@@ -123,13 +114,13 @@ export default function Projects() {
   }
 
   // rotate and advance to next image variant for the project
-  function validateUrl(url: string) {
+  function validateUrl(url) {
     return fetch(url, { method: "HEAD" })
       .then((r) => r.ok)
       .catch(() => false);
   }
 
-  function cycleProjectImage(id: string) {
+    function cycleProjectImage(id) {
     if (!containerRef.current) return;
     const imgEl = containerRef.current.querySelector(`img[data-project='${id}']`);
     if (!imgEl) return;

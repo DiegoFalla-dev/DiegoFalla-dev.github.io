@@ -25,7 +25,7 @@ export default function Education() {
                 <p className="mt-1 text-sm text-slate-200">{s.school}</p>
                 {Array.isArray(s.details) && s.details.length > 0 && (
                   <ul className="mt-3 text-sm list-disc list-inside text-slate-300">
-                    {s.details.map((d: string, i: number) => (
+                    {s.details.map((d, i) => (
                       <li key={i}>{d}</li>
                     ))}
                   </ul>

@@ -1,12 +1,12 @@
 import './index.css';
-import Header from './components/Header';
-import SobreMi from './components/SobreMi';
-import Proyectos from './components/Proyectos';
-import Formacion from './components/Formacion';
-import Tecnologias from './components/Tecnologias';
-import Experiencia from './components/Experiencia';
-// import Contact from './components/Contact';
-import BackgroundIcons from './components/BackgroundIcons';
+import Header from './components/Header.jsx';
+import SobreMi from './components/SobreMi.jsx';
+import Proyectos from './components/Proyectos.jsx';
+import Formacion from './components/Formacion.jsx';
+import Tecnologias from './components/Tecnologias.jsx';
+import Experiencia from './components/Experiencia.jsx';
+// import Contact from './components/Contact.jsx';
+import BackgroundIcons from './components/BackgroundIcons.jsx';
 import { FiGithub, FiLinkedin, FiFileText } from 'react-icons/fi';
 
 function App() {

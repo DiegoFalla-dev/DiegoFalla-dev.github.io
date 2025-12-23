@@ -2,17 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 
-type FormValues = {
-  name: string;
-  email: string;
-  message: string;
-};
-
 export default function Contact() {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<FormValues>();
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
   const [sent, setSent] = useState(false);
 
-  async function onSubmit(data: FormValues) {
+  async function onSubmit(data) {
     // Simulate sending; replace with real API call if needed
     await new Promise((r) => setTimeout(r, 700));
     console.log("Contact form submit:", data);
