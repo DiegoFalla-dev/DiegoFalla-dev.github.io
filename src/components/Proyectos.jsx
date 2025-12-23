@@ -95,21 +95,6 @@ export default function Projects() {
       }
     }
 
-    // also check for base file without number (e.g. id.png) and append it
-    // after numbered variants so the numbered variant (id1) remains the default
-    for (const ext of exts) {
-      try {
-        const url = `/img/${id}.${ext}`;
-        const res = await fetch(url, { method: "HEAD" });
-        if (res.ok) {
-          if (!variants.includes(url)) variants.push(url);
-          break;
-        }
-      } catch (e) {
-        // ignore
-      }
-    }
-
     return variants;
   }
 
