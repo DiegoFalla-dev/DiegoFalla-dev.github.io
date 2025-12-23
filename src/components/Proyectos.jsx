@@ -51,7 +51,7 @@ export default function Projects() {
   useEffect(() => {
     if (!containerRef.current) return;
     const ctx = gsap.context(() => {
-      gsap.from(".project-card", { y: 16, opacity: 0, stagger: 0.12, duration: 0.55, ease: "power2.out" });
+      gsap.from(".project-card", { y: 16, opacity: 0, filter: "blur(10px)", stagger: 0.2, duration: 0.8, ease: "power2.out" });
     }, containerRef);
 
     // prefetch numbered variants from public/img by id so they display immediately
@@ -161,7 +161,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 className="block w-full md:w-[420px] rounded-lg overflow-hidden shadow-lg bg-gradient-to-br from-brand-primary to-brand-accent"
               >
-                <div className="relative w-full h-56 md:h-48" style={{ perspective: 900 }}>
+                <div className="relative w-full h-40 sm:h-56 md:h-48" style={{ perspective: 900 }}>
                   <img
                     src={(imgVariants[p.id] && imgVariants[p.id][imgIndex[p.id]]) || p.image}
                     data-project={p.id}

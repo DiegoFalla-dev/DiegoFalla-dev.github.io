@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 backdrop-blur-sm">
       <div className="mx-auto w-[90vw] md:w-[70vw] max-w-[1200px] px-6 py-3 flex items-center justify-center">
-        <nav className="flex items-center gap-4 text-sm text-slate-200">
+        <nav className="flex items-center gap-2 text-xs text-slate-200 sm:gap-4 sm:text-sm">
           <motion.a
             whileHover={{ y: -2 }}
             href="#"

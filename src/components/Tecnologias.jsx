@@ -37,7 +37,7 @@ export default function Skills() {
   return (
     <section id="Tecnologias" className="w-full px-0 py-12">
       <h2 className="mb-4 text-2xl font-bold text-right text-slate-100"><span style={{color: "#A52502"}}>T</span>ecnología</h2>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         <div className="glass p-4 rounded-lg">
           <h3 className="mb-3 text-lg font-semibold text-slate-100 flex items-center gap-2">
             <FiMonitor className="text-brand-primary" />

@@ -11,14 +11,14 @@ import { FiGithub, FiLinkedin, FiFileText } from 'react-icons/fi';
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-bg relative">
+    <div className="relative min-h-screen bg-brand-bg">
       <BackgroundIcons />
       <Header />
       <main className="mx-auto w-[90vw] md:w-[70vw] max-w-[1200px] px-4 py-10 space-y-8">
-        <section className="flex items-center h-screen p-6 glass">
+        <section className="flex items-center min-h-screen p-6 glass">
           <div className="flex flex-col w-full gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex-1">
-              <h2 className="text-6xl font-extrabold tracking-tight md:text-8xl lg:text-9xl text-slate-100"><span className='text-brand-primary'>D</span>iego <span className='text-brand-primary'>F</span>alla <span className='text-brand-primary'>S</span>amaniego</h2>
+              <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl md:text-8xl lg:text-9xl text-slate-100"><span className='text-brand-primary'>D</span>iego <span className='text-brand-primary'>F</span>alla <span className='text-brand-primary'>S</span>amaniego</h2>
               <p className="mt-4 text-lg text-slate-300">Desarrollador full-stack — React · TypeScript · Node</p>
             </div>
 
@@ -28,25 +28,25 @@ function App() {
                 href="https://github.com/DiegoFalla-dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-4 py-2 transition-colors duration-150 border rounded-md w-35 border-brand-mid/20 text-slate-100 hover-bg-brand-mid-20-important hover-brand-primary-important"
+                className="inline-flex items-center justify-center w-full px-4 py-2 transition-colors duration-150 border rounded-md sm:w-35 border-brand-mid/20 text-slate-100 hover-bg-brand-mid-20-important hover-brand-primary-important"
               >
-                <FiGithub /> <span className="hidden ml-2 md:inline">GitHub</span>
+                <FiGithub /> <span className="hidden ml-2 sm:inline">GitHub</span>
               </a>
 
               <a
                 href="https://www.linkedin.com/in/diego-falla-samaniego-249952309/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-4 py-2 transition-colors duration-150 border rounded-md w-35 border-brand-mid/20 text-slate-100 hover-bg-brand-mid-20-important hover-brand-mid-important"
+                className="inline-flex items-center justify-center w-full px-4 py-2 transition-colors duration-150 border rounded-md sm:w-35 border-brand-mid/20 text-slate-100 hover-bg-brand-mid-20-important hover-brand-mid-important"
               >
-                <FiLinkedin /> <span className="hidden ml-2 md:inline">LinkedIn</span>
+                <FiLinkedin /> <span className="hidden ml-2 sm:inline">LinkedIn</span>
               </a>
 
               <a
                 href="#experience"
-                className="inline-flex items-center justify-center px-4 py-2 transition-colors duration-150 border rounded-md w-35 border-brand-mid/20 text-slate-100 hover-bg-brand-mid-20-important hover-brand-accent-important"
+                className="inline-flex items-center justify-center w-full px-4 py-2 transition-colors duration-150 border rounded-md sm:w-35 border-brand-mid/20 text-slate-100 hover-bg-brand-mid-20-important hover-brand-accent-important"
               >
-                <FiFileText /> <span className="hidden ml-2 md:inline">CV</span>
+                <FiFileText /> <span className="hidden ml-2 sm:inline">CV</span>
               </a>
             </div>
           </div>
